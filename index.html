@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Usmani Computer Institute</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>Usmani Computer Institute</h1>
+    <p class="subtitle">School Management System</p>
+
+    {% if message %}
+        <div class="success">{{ message }}</div>
+    {% endif %}
+
+    <form method="POST">
+        <label>Student Name</label>
+        <input type="text" name="name" required>
+
+        <label>Class</label>
+        <input type="text" name="class" required>
+
+        <label>Father Name</label>
+        <input type="text" name="father" required>
+
+        <label>Fees Amount</label>
+        <input type="number" name="fees" required>
+
+        <label>Status</label>
+        <select name="status">
+            <option>Paid</option>
+            <option>Unpaid</option>
+        </select>
+
+        <button type="submit">Save Record</button>
+    </form>
+</div>
+
+</body>
+</html>
